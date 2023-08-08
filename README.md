@@ -1,1 +1,1 @@
-# newrelic-microsoft-observability
+# New Relic - Microsoft Observability capabilities
