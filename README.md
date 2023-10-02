@@ -1,1 +1,1 @@
-# New Relic - Microsoft Observability capabilities
+# New Relic - Microsoft 365 Observability capabilities
