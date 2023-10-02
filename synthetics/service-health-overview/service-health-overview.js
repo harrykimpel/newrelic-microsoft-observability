@@ -56,14 +56,14 @@ async function recordData(events) {
     }
 }
 
-var urlAuthBody = '';
-urlAuthBody += 'client_id=' + MSFT_CLIENT_ID;
-urlAuthBody += '&client_secret=' + MSFT_CLIENT_SECRET;
-urlAuthBody += '&response_type=token';
-urlAuthBody += '&scope=ServiceHealth.Read.All%20user.read%20openid%20profile%20offline_access';
-urlAuthBody += '&username=' + MSFT_USERNAME;
-urlAuthBody += '&password=' + MSFT_USER_PASSWORD;
-urlAuthBody += '&grant_type=password';
+var urlAuthBody = `
+    client_id=` + MSFT_CLIENT_ID + `
+    &client_secret=` + MSFT_CLIENT_SECRET + `
+    &response_type=token
+    &scope=ServiceHealth.Read.All%20user.read%20openid%20profile%20offline_access
+    &username=` + MSFT_USERNAME + `
+    &password=` + MSFT_USER_PASSWORD + `
+    &grant_type=password`;
 
 var options = {
     body: urlAuthBody,
