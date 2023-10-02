@@ -13,7 +13,6 @@ const promisifyRequestPost = promisify(request.post);
 /**
  * VARIABLE DEFINITIONS
  */
-var MSFT_GRAPH_ACCESS_TOKEN = $secure.MSFT_GRAPH_ACCESS_TOKEN;
 var NEW_RELIC_ACCOUNT_ID = $secure.NEW_RELIC_ACCOUNT_ID;
 var NEW_RELIC_INSIGHTS_INSERT_KEY = $secure.NEW_RELIC_INSIGHTS_INSERT_KEY;
 var MSFT_TENANT_ID = $secure.MSFT_TENANT_ID;
