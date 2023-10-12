@@ -1,0 +1,11 @@
+integrations:
+  - name: nri-flex
+    interval: 24h
+    config:
+      name: M365AdfsCertificate
+      apis:
+        - event_type: M365AdfsCertificate
+          shell: powershell
+          timeout: 299000
+          commands:
+            - run: '& "C:/Program Files/New Relic/newrelic-infra/integrations.d/GetExpiringCertificates.ps1"'

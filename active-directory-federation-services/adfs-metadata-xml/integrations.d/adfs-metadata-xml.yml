@@ -1,0 +1,11 @@
+integrations:
+  - name: nri-flex
+    interval: 60m
+    config:
+      name: M365AdfsMetadata
+      apis:
+        - event_type: M365AdfsMetadata
+          shell: powershell
+          timeout: 299000
+          commands:
+            - run: '& "C:/Program Files/New Relic/newrelic-infra/integrations.d/GetMetadataXML.ps1"'
