@@ -11,3 +11,5 @@ The service health monitoring is implemented as a [New Relic Synthetics Scripted
 The script that can be copied and pasted into the New Relic UI is available [here](/service-health-overview/service-health-overview.js).
 
 This repo also includes a sample New Relic dashboard that you can use to visualize the data in a meaningful way. The JSON representation of the dashboard is available [here](/service-health-overview/service-health-overview-dashboard.json).
+
+![service health overview dashboard](/service-health-overview/service-health-overview-dashboard.png)
