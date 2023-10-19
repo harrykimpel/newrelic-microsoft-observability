@@ -1,0 +1,11 @@
+integrations:
+  - name: nri-flex
+    interval: 60m
+    config:
+      name: M365ExchangeWebServices
+      apis:
+        - event_type: M365ExchangeWebServices
+          shell: powershell
+          timeout: 299000
+          commands:
+            - run: '& "C:/Program Files/New Relic/newrelic-infra/integrations.d/CheckEWSManagedAPI.bat"'
