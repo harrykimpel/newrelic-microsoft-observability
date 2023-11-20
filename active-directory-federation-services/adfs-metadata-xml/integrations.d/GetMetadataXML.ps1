@@ -17,7 +17,7 @@ $result = Invoke-WebRequest $metadataUrl -UseBasicParsing
 # Build a custom object to pass into the results
 $jsonResult = [ PSCustomObject ]@{
 
-    mtadataXMLURL     = $metadataUrl
+    metadataXMLURL    = $metadataUrl
     statusCode        = $result.StatusCode 
     statusDescription = $result.StatusDescription 
     rawContentLength  = $result.RawContentLength
