@@ -3,3 +3,4 @@
 /exchange/ews-managed-api/obj/*
 /exchange/ews-managed-api/src/bin/*
 /exchange/ews-managed-api/src/obj/*
+.DS_Store
