@@ -4,3 +4,5 @@
 /exchange/ews-managed-api/src/bin/*
 /exchange/ews-managed-api/src/obj/*
 .DS_Store
+active-directory-federation-services/.DS_Store
+*/.DS_Store
