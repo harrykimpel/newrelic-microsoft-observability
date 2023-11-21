@@ -6,7 +6,7 @@ For production AD FS farms a publicly trusted SSL certificate is recommended. Th
 
 ## Installation
 
-The Active Directory Federation Services (AD FS) monitoring is implemented as an [on-host integrations](https://docs.newrelic.com/docs/infrastructure/host-integrations/get-started/introduction-host-integrations/) for the [New Relic Infrastructure](https://docs.newrelic.com/docs/infrastructure/infrastructure-monitoring/get-started/get-started-infrastructure-monitoring/) agent.
+The Active Directory Federation Services (AD FS) monitoring is implemented as an [on-host integration](https://docs.newrelic.com/docs/infrastructure/host-integrations/get-started/introduction-host-integrations/) for the [New Relic Infrastructure](https://docs.newrelic.com/docs/infrastructure/infrastructure-monitoring/get-started/get-started-infrastructure-monitoring/) agent.
 
 This integration will typically run on the same server that hosts the AD FS role. In order to get this deployed, please follow the steps below:
 
