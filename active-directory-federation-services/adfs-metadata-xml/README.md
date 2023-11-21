@@ -16,3 +16,9 @@ This integration will typically run on the same server that hosts the AD FS role
 2. Copy the configuration file [/active-directory-federation-services/adfs-metadata-xml/integrations.d/adfs-metadata-xml.yml](/active-directory-federation-services/adfs-metadata-xml/integrations.d/adfs-metadata-xml.yml) and the PowerShell script [/active-directory-federation-services/adfs-certificates/integrations.d/GetExpiringCertificates.ps1](/active-directory-federation-services/adfs-certificates/integrations.d/GetExpiringCertificates.ps1) into the agents integration folder (default locations: - Linux: /etc/newrelic-infra/integrations.d/, - Windows: C:\Program Files\New Relic\newrelic-infra\integrations.d).
 
 3. Restart the Infrastructure agent service
+
+## New Relic dashboard
+
+Once the integration is up and running, you can visualize the data using the [sample dashboard](/active-directory-federation-services/adfs-metadata-xml/integrations.d/adfs-metadata-xml-dashboard.json) provided.
+
+![adfs-metadata-xml-dashboard](/active-directory-federation-services/adfs-metadata-xml/integrations.d/adfs-metadata-xml-dashboard.png)

@@ -1,0 +1,166 @@
+{
+    "name": "Microsoft 365 - AD FS Certificates",
+    "description": "",
+    "permissions": "PUBLIC_READ_WRITE",
+    "pages": [
+        {
+            "name": "Microsoft 365 - AD FS Certificates",
+            "description": "",
+            "widgets": [
+                {
+                    "title": "Next Expiring certificate",
+                    "layout": {
+                        "column": 1,
+                        "row": 1,
+                        "width": 4,
+                        "height": 3
+                    },
+                    "linkedEntityGuids": null,
+                    "visualization": {
+                        "id": "viz.billboard"
+                    },
+                    "rawConfiguration": {
+                        "facet": {
+                            "showOtherSeries": false
+                        },
+                        "nrqlQueries": [
+                            {
+                                "accountIds": [
+                                    NR_ACCOUNT_ID
+                                ],
+                                "query": "SELECT min(certNotAfter) as 'Cert expiring' from M365AdfsCertificate facet certSubject order by latest(certNotAfter ) limit 1"
+                            }
+                        ],
+                        "platformOptions": {
+                            "ignoreTimeRange": false
+                        },
+                        "thresholds": [
+                            {
+                                "alertSeverity": "CRITICAL",
+                                "value": 5
+                            }
+                        ]
+                    }
+                },
+                {
+                    "title": "Expiring Certificates",
+                    "layout": {
+                        "column": 5,
+                        "row": 1,
+                        "width": 8,
+                        "height": 3
+                    },
+                    "linkedEntityGuids": null,
+                    "visualization": {
+                        "id": "viz.bar"
+                    },
+                    "rawConfiguration": {
+                        "facet": {
+                            "showOtherSeries": false
+                        },
+                        "nrqlQueries": [
+                            {
+                                "accountIds": [
+                                    NR_ACCOUNT_ID
+                                ],
+                                "query": "SELECT max( certExpiringInReverseDays ) from M365AdfsCertificate facet certSubject order by certExpiringInReverseDays asc\n"
+                            }
+                        ],
+                        "platformOptions": {
+                            "ignoreTimeRange": false
+                        }
+                    }
+                },
+                {
+                    "title": "Expiring Certificates",
+                    "layout": {
+                        "column": 1,
+                        "row": 4,
+                        "width": 6,
+                        "height": 3
+                    },
+                    "linkedEntityGuids": null,
+                    "visualization": {
+                        "id": "viz.table"
+                    },
+                    "rawConfiguration": {
+                        "facet": {
+                            "showOtherSeries": false
+                        },
+                        "nrqlQueries": [
+                            {
+                                "accountIds": [
+                                    NR_ACCOUNT_ID
+                                ],
+                                "query": "SELECT min(certNotAfter) as 'Cert expiring',max(certNotBefore) as 'Cert valid from' from M365AdfsCertificate facet certSubject order by latest(certNotAfter )"
+                            }
+                        ],
+                        "platformOptions": {
+                            "ignoreTimeRange": false
+                        }
+                    }
+                },
+                {
+                    "title": "Expiring Certificates",
+                    "layout": {
+                        "column": 7,
+                        "row": 4,
+                        "width": 6,
+                        "height": 3
+                    },
+                    "linkedEntityGuids": null,
+                    "visualization": {
+                        "id": "viz.line"
+                    },
+                    "rawConfiguration": {
+                        "facet": {
+                            "showOtherSeries": false
+                        },
+                        "legend": {
+                            "enabled": true
+                        },
+                        "nrqlQueries": [
+                            {
+                                "accountIds": [
+                                    NR_ACCOUNT_ID
+                                ],
+                                "query": "SELECT min(certExpiringIn.Days) from M365AdfsCertificate facet certSubject TIMESERIES  since 1 month ago"
+                            }
+                        ],
+                        "platformOptions": {
+                            "ignoreTimeRange": false
+                        },
+                        "yAxisLeft": {
+                            "zero": true
+                        },
+                        "yAxisRight": {
+                            "zero": true
+                        }
+                    }
+                },
+                {
+                    "title": "Raw Data",
+                    "layout": {
+                        "column": 1,
+                        "row": 7,
+                        "width": 12,
+                        "height": 3
+                    },
+                    "linkedEntityGuids": null,
+                    "visualization": {
+                        "id": "viz.table"
+                    },
+                    "rawConfiguration": {
+                        "nrqlQueries": [
+                            {
+                                "accountId": NR_ACCOUNT_ID,
+                                "query": "SELECT * from M365AdfsCertificate"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ],
+    "variables": []
+}

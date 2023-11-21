@@ -7,21 +7,24 @@ $StartDate = (Get-Date)
 
 foreach ($item in $expiring_certs) {
 
+  $ts = New-TimeSpan -Start $StartDate -End $item.NotAfter
+  $tsDaysReverse = $ts.Days * -1
+
   # Build a custom object to pass into the results
   $cert = [ PSCustomObject ]@{
-
-    certSubject        = $item.Subject
-    certIssuer         = $item.Issuer
-    #certSerialNumber   = $item.SerialNumber
-    certNotBefore      = ( [DateTimeOffset ]$item.NotBefore ).ToUnixTimeSeconds()
-    certNotAfter       = ( [DateTimeOffset ]$item.NotAfter ).ToUnixTimeSeconds()
-    #certThumbprint     = $item.Thumbprint
-    certExpiringIn     = New-TimeSpan -Start $StartDate -End $item.NotAfter
-    certExpirationDate = $item.NotAfter | Get-Date -Uformat %s
-    certFriendlyName   = $item.FriendlyName
+    certSubject               = $item.Subject
+    certIssuer                = $item.Issuer
+    certSerialNumber          = $item.SerialNumber
+    certNotBefore             = ( [DateTimeOffset ]$item.NotBefore ).ToUnixTimeSeconds()
+    certNotAfter              = ( [DateTimeOffset ]$item.NotAfter ).ToUnixTimeSeconds()
+    certThumbprint            = $item.Thumbprint
+    certExpiringIn            = $ts
+    certExpiringInReverseDays = $tsDaysReverse
+    certExpirationDate        = $item.NotAfter | Get-Date -Uformat %s
+    certFriendlyName          = $item.FriendlyName
   }
 
   $results += $cert
 }
 
-$results | ConvertTo-Json 
+$results | ConvertTo-Json
