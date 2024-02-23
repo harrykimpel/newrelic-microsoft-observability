@@ -1,10 +1,10 @@
 {
-    "name": "Microsoft 365 - Service Monitoring - 30 Day Report",
+    "name": "Microsoft 365 - User Login",
     "description": null,
     "permissions": "PUBLIC_READ_WRITE",
     "pages": [
         {
-            "name": "O365-Service Monitoring - 30 Day Report",
+            "name": "Microsoft 365 - User Login",
             "description": null,
             "widgets": [
                 {
