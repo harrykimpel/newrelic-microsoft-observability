@@ -23,3 +23,14 @@ The script that can be copied and pasted into the New Relic UI is available [her
 This repo also includes a sample New Relic dashboard that you can use to visualize the data in a meaningful way. The JSON representation of the dashboard is available [here](/service-health-overview/service-health-overview-dashboard.json).
 
 ![service health overview dashboard](/service-health-overview/service-health-overview-dashboard.png)
+
+## Dashboard
+
+In order to get the dashboard imported into New Relic, please follow the steps below:
+
+1. Copy the [dashboard JSON representation](/service-health-overview/service-health-overview-dashboard.json)
+2. Replace the NR_ACCOUNT_ID in JSON with your actual New Relic account ID (you can typically find it in the URL as `account` parameter or in the `API Keys` section of your account)
+3. Navigate to the `Dashboards` section within New Relic
+4. Click on `Import dashboard` on the top right corner of the screen
+5. Paste in the entire dashboard JSON
+6. Click `Import dashboard`

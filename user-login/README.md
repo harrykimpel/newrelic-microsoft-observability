@@ -29,3 +29,14 @@ This repo also includes a sample New Relic dashboard that you can use to visuali
 ## Setting up the MFA authenticator app
 
 When setting up MFA for the test user of this Synthetic script, you will be asked to scan the QR code for example from your mobile device. Choosing the `Can't scan the QR code` option during the setup process will provide you with a secret obtained while setting up 2FA/MFA for your user. Capture this key and store it in the Secure Credential `MSFT_USERNAME_MFA_SECRET` for use during monitor execution.
+
+## Dashboard
+
+In order to get the dashboard imported into New Relic, please follow the steps below:
+
+1. Copy the [dashboard JSON representation](/service-health-overview/service-health-overview-dashboard.json)
+2. Replace the NR_ACCOUNT_ID in JSON with your actual New Relic account ID (you can typically find it in the URL as `account` parameter or in the `API Keys` section of your account)
+3. Navigate to the `Dashboards` section within New Relic
+4. Click on `Import dashboard` on the top right corner of the screen
+5. Paste in the entire dashboard JSON
+6. Click `Import dashboard`
