@@ -18,8 +18,6 @@ var NEW_RELIC_INSIGHTS_INSERT_KEY = $secure.NEW_RELIC_INSIGHTS_INSERT_KEY;
 var MSFT_TENANT_ID = $secure.MSFT_TENANT_ID;
 var MSFT_CLIENT_ID = $secure.MSFT_CLIENT_ID;
 var MSFT_CLIENT_SECRET = $secure.MSFT_CLIENT_SECRET;
-var MSFT_USERNAME = $secure.MSFT_USERNAME;
-var MSFT_USER_PASSWORD = $secure.MSFT_USER_PASSWORD;
 var NEW_RELIC_EVENT_TYPE = 'M365ServiceOverview';
 
 /**
@@ -59,10 +57,7 @@ var urlAuthBody = '';
 urlAuthBody += 'client_id=' + MSFT_CLIENT_ID;
 urlAuthBody += '&client_secret=' + MSFT_CLIENT_SECRET;
 urlAuthBody += '&response_type=token';
-//urlAuthBody += '&scope=ServiceHealth.Read.All%20user.read%20openid%20profile%20offline_access';
 urlAuthBody += '&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default';
-urlAuthBody += '&username=' + MSFT_USERNAME;
-urlAuthBody += '&password=' + MSFT_USER_PASSWORD;
 urlAuthBody += '&grant_type=client_credentials';
 
 var options = {
