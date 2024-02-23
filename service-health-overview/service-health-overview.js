@@ -55,14 +55,15 @@ async function recordData(events) {
     }
 }
 
-var urlAuthBody = `
-    client_id=` + MSFT_CLIENT_ID + `
-    &client_secret=` + MSFT_CLIENT_SECRET + `
-    &response_type=token
-    &scope=ServiceHealth.Read.All%20user.read%20openid%20profile%20offline_access
-    &username=` + MSFT_USERNAME + `
-    &password=` + MSFT_USER_PASSWORD + `
-    &grant_type=password`;
+var urlAuthBody = '';
+urlAuthBody += 'client_id=' + MSFT_CLIENT_ID;
+urlAuthBody += '&client_secret=' + MSFT_CLIENT_SECRET;
+urlAuthBody += '&response_type=token';
+//urlAuthBody += '&scope=ServiceHealth.Read.All%20user.read%20openid%20profile%20offline_access';
+urlAuthBody += '&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default';
+urlAuthBody += '&username=' + MSFT_USERNAME;
+urlAuthBody += '&password=' + MSFT_USER_PASSWORD;
+urlAuthBody += '&grant_type=client_credentials';
 
 var options = {
     body: urlAuthBody,
