@@ -51,7 +51,19 @@
                         ],
                         "platformOptions": {
                             "ignoreTimeRange": false
-                        }
+                        },
+                        "thresholds": [
+                            {
+                                "columnName": "OK",
+                                "from": 0,
+                                "severity": "success"
+                            },
+                            {
+                                "columnName": "FAIL",
+                                "from": 0,
+                                "severity": "critical"
+                            }
+                        ]
                     }
                 },
                 {
@@ -67,12 +79,44 @@
                         "id": "viz.line"
                     },
                     "rawConfiguration": {
+                        "colors": {
+                            "seriesOverrides": [
+                                {
+                                    "color": "#62ec18",
+                                    "seriesName": "OK"
+                                },
+                                {
+                                    "color": "#e72323",
+                                    "seriesName": "FAIL"
+                                }
+                            ]
+                        },
+                        "facet": {
+                            "showOtherSeries": false
+                        },
+                        "legend": {
+                            "enabled": true
+                        },
                         "nrqlQueries": [
                             {
-                                "accountId": NR_ACCOUNT_ID,
+                                "accountIds": [
+                                    NR_ACCOUNT_ID
+                                ],
                                 "query": "SELECT filter(count(*), where result = 'SUCCESS') as 'OK', filter(count(*), where result != 'SUCCESS') as 'FAIL'  from SyntheticCheck  since 30 day ago TIMESERIES auto where monitorName like 'Microsoft 365 - user login'"
                             }
-                        ]
+                        ],
+                        "platformOptions": {
+                            "ignoreTimeRange": false
+                        },
+                        "thresholds": {
+                            "isLabelVisible": true
+                        },
+                        "yAxisLeft": {
+                            "zero": true
+                        },
+                        "yAxisRight": {
+                            "zero": true
+                        }
                     }
                 },
                 {
