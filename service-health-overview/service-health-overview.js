@@ -79,7 +79,7 @@ $http.post(urlAuth, options,
 
         var options = {
             headers: {
-                'Authorization': 'Bearer ' + jsonResponse.access_token,
+                'Authorization': `Bearer ${jsonResponse.access_token}`,
                 'Host': 'graph.microsoft.com'
             }
         }
