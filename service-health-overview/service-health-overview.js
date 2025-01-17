@@ -5,10 +5,9 @@
  */
 
 var assert = require('assert');
-const request = require("request");
 const { promisify } = require("util");
-const promisifyRequestGet = promisify(request.get);
-const promisifyRequestPost = promisify(request.post);
+const promisifyRequestGet = promisify($http.get);
+const promisifyRequestPost = promisify($http.post);
 
 /**
  * VARIABLE DEFINITIONS
