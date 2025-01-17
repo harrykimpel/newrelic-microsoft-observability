@@ -25,8 +25,9 @@ var NEW_RELIC_EVENT_TYPE = 'M365ServiceOverview';
  * @returns {Promise<request.Response>}
  */
 async function insertInsightsEvent(body) {
+    const URL = `https://insights-collector.newrelic.com/v1/accounts/${NEW_RELIC_ACCOUNT_ID}/events`
     return await promisifyRequestPost({
-        uri: 'https://insights-collector.newrelic.com/v1/accounts/' + NEW_RELIC_ACCOUNT_ID + '/events',
+        uri: URL,
         body: body,
         headers: {
             'X-Insert-Key': NEW_RELIC_INSIGHTS_INSERT_KEY,
@@ -45,7 +46,7 @@ async function recordData(events) {
     let body = JSON.stringify(events, null, 2);
     const insightsResponse = await insertInsightsEvent(body);
     if (insightsResponse.statusCode !== 200) {
-        console.log("insertInsightsEvent() non-200 return code: " + insightsResponse.statusCode);
+        console.log(`insertInsightsEvent() non-200 return code: ${insightsResponse.statusCode}`);
     }
     else {
         console.log('Script executed successfully');
@@ -53,8 +54,8 @@ async function recordData(events) {
 }
 
 var urlAuthBody = '';
-urlAuthBody += 'client_id=' + MSFT_CLIENT_ID;
-urlAuthBody += '&client_secret=' + MSFT_CLIENT_SECRET;
+urlAuthBody += `client_id=${MSFT_CLIENT_ID}`;
+urlAuthBody += `&client_secret=${MSFT_CLIENT_SECRET}`;
 urlAuthBody += '&response_type=token';
 urlAuthBody += '&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default';
 urlAuthBody += '&grant_type=client_credentials';
@@ -66,7 +67,7 @@ var options = {
     }
 }
 
-var urlAuth = 'https://login.microsoftonline.com/' + MSFT_TENANT_ID + '/oauth2/v2.0/token?';
+var urlAuth = `https://login.microsoftonline.com/${MSFT_TENANT_ID}/oauth2/v2.0/token?`;
 
 $http.post(urlAuth, options,
     // Callback
