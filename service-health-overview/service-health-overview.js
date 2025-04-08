@@ -14,10 +14,10 @@ const promisifyRequestPost = promisify($http.post);
  */
 var NEW_RELIC_ACCOUNT_ID = $secure.NEW_RELIC_ACCOUNT_ID;
 var NEW_RELIC_INSIGHTS_INSERT_KEY = $secure.NEW_RELIC_INSIGHTS_INSERT_KEY;
+var NEW_RELIC_EVENT_TYPE = 'M365ServiceOverview';
 var MSFT_TENANT_ID = $secure.MSFT_TENANT_ID;
 var MSFT_CLIENT_ID = $secure.MSFT_CLIENT_ID;
 var MSFT_CLIENT_SECRET = $secure.MSFT_CLIENT_SECRET;
-var NEW_RELIC_EVENT_TYPE = 'M365ServiceOverview';
 
 /**
  * Function to post events to the New Relic Events API
