@@ -10,9 +10,19 @@ In order for the Synthetic script to run, you need to create the following `Secu
 
 - NEW_RELIC_ACCOUNT_ID: New Relic account ID
 - NEW_RELIC_INSIGHTS_INSERT_KEY: New Relic Insights insert key
+- NEW_RELIC_EVENT_TYPE: name of custom event in New Relic
 - MSFT_TENANT_ID: Microsoft Entra ID tenant ID
 - MSFT_CLIENT_ID: Microsoft Entra ID app registration application (client) id
 - MSFT_CLIENT_SECRET: Microsoft Entra ID app registration secret
+
+### Microsoft Azure App Registration details
+
+For the authentication to Microsoft Online and the later call to Microsoft Graph API, you need to have an [Azure Entra ID App Registration](https://learn.microsoft.com/en-us/entra/identity-platform/permissions-consent-overview?WT.mc_id=Portal-Microsoft_AAD_RegisteredApps#using-the-admin-consent-endpoint) configured with the following permissions:
+
+- User.Read
+- ServiceHealth.Read.All
+
+In the **Certificates and Secrets** section, you can then create a new client secret. Its secret value has to be configured in **MSFT_CLIENT_SECRET**.
 
 ## Installation
 
