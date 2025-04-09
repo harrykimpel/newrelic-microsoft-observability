@@ -10,7 +10,7 @@ In order for the Synthetic script to run, you need to create the following `Secu
 
 - NEW_RELIC_ACCOUNT_ID: New Relic account ID
 - NEW_RELIC_INSIGHTS_INSERT_KEY: New Relic Insights insert key
-- NEW_RELIC_EVENT_TYPE: name of custom event in New Relic
+- NEW_RELIC_EVENT_TYPE: name of custom event in New Relic, should be `M365ServiceOverview` (note: if you change the name here, you also have to change the references in the [sample dashboard](/service-health-overview/service-health-overview-dashboard.json))
 - MSFT_TENANT_ID: Microsoft Entra ID tenant ID
 - MSFT_CLIENT_ID: Microsoft Entra ID app registration application (client) id
 - MSFT_CLIENT_SECRET: Microsoft Entra ID app registration secret
