@@ -19,8 +19,8 @@ In order for the Synthetic script to run, you need to create the following `Secu
 
 For the authentication to Microsoft Online and the later call to Microsoft Graph API, you need to have an [Azure Entra ID App Registration](https://learn.microsoft.com/en-us/entra/identity-platform/permissions-consent-overview?WT.mc_id=Portal-Microsoft_AAD_RegisteredApps#using-the-admin-consent-endpoint) configured with the following permissions:
 
-- User.Read
-- ServiceHealth.Read.All
+- `User.Read`
+- `ServiceHealth.Read.All`
 
 In the **Certificates and Secrets** section, you can then create a new client secret. Its secret value has to be configured in **MSFT_CLIENT_SECRET**.
 
