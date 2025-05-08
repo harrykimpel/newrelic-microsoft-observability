@@ -43,10 +43,10 @@ $webDriver.getCapabilities().then(function () { })
             .then(function () { return logger.log(6, "Click By.id(\"idSIButton9\")", "mfa"), $browser.waitForAndFindElement($selenium.By.id("idSIButton9"), DefaultTimeout).then(e => (e.click(), Promise.resolve(!0))) })
             .then(function () { return logger.log(7, "Enter MFA token using locator By.id(\"idTxtBx_SAOTCC_OTC\")", "mfa"), $browser.waitForAndFindElement($selenium.By.id("idTxtBx_SAOTCC_OTC"), DefaultTimeout).then(e => (e.sendKeys(totp.generate()), Promise.resolve(!0))) })
             .then(function () { return logger.log(8, "Click By.id(\"idSubmit_SAOTCC_Continue\")", "mfa"), $browser.waitForAndFindElement($selenium.By.id("idSubmit_SAOTCC_Continue"), DefaultTimeout).then(e => (e.click(), Promise.resolve(!0))) })
-            .then(function () { return logger.log(10, "Sleep a little", "M365"), $browser.sleep (1000) })
-            .then(function () { return logger.log(9, "Click By.id(\"idBtn_Back\")", "M365"), $browser.waitForAndFindElement($selenium.By.id("idBtn_Back"), DefaultTimeout).then(e => (e.click(), Promise.resolve(!0))) })
-            .then(function () { return logger.log(12, "Sleep a little", "M365"), $browser.sleep (1000) })
-            .then(function () { return logger.log(13, "Click By.id(\"welcome-title\")", "M365"), $browser.waitForAndFindElement($selenium.By.id("welcome-title"), DefaultTimeout) })
+            .then(function () { return logger.log(9, "Sleep a little", "M365"), $browser.sleep (1000) })
+            .then(function () { return logger.log(10, "Click By.id(\"idBtn_Back\")", "M365"), $browser.waitForAndFindElement($selenium.By.id("idBtn_Back"), DefaultTimeout).then(e => (e.click(), Promise.resolve(!0))) })
+            .then(function () { return logger.log(11, "Sleep a little", "M365"), $browser.sleep (1000) })
+            .then(function () { return logger.log(12, "Click By.id(\"welcome-title\")", "M365"), $browser.waitForAndFindElement($selenium.By.id("welcome-title"), DefaultTimeout) })
             .then(function () {
                 logger.endTestCase("M365");
             }, function (err) {
