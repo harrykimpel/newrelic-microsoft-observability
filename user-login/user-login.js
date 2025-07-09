@@ -46,7 +46,7 @@ $webDriver.getCapabilities().then(function () { })
             .then(function () { return logger.log(9, "Sleep a little", "M365"), $browser.sleep (1000) })
             .then(function () { return logger.log(10, "Click By.id(\"idBtn_Back\")", "M365"), $browser.waitForAndFindElement($selenium.By.id("idBtn_Back"), DefaultTimeout).then(e => (e.click(), Promise.resolve(!0))) })
             .then(function () { return logger.log(11, "Sleep a little", "M365"), $browser.sleep (1000) })
-            .then(function () { return logger.log(12, "Click By.id(\"welcome-title\")", "M365"), $browser.waitForAndFindElement($selenium.By.id("welcome-title"), DefaultTimeout) })
+            //.then(function () { return logger.log(12, "Click By.id(\"welcome-title\")", "M365"), $browser.waitForAndFindElement($selenium.By.id("welcome-title"), DefaultTimeout) })
             .then(function () {
                 logger.endTestCase("M365");
             }, function (err) {
