@@ -30,6 +30,8 @@ This repo also includes a sample New Relic dashboard that you can use to visuali
 
 When setting up MFA for the test user of this Synthetic script, you will be asked to scan the QR code for example from your mobile device. Choosing the `Can't scan the QR code` option during the setup process will provide you with a secret obtained while setting up 2FA/MFA for your user. Capture this key and store it in the Secure Credential `MSFT_USERNAME_MFA_SECRET` for use during monitor execution.
 
+During the 2FA/MFA setup, you will be asked to provide and validate the setup with a current token. You can leverage the [MFA setup](/user-login/mfa-setup.js) script in a separate New Relic Synthetics script. When running this, it will print out a current token in the log.
+
 ## Dashboard
 
 In order to get the dashboard imported into New Relic, please follow the steps below:
