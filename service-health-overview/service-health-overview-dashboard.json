@@ -49,7 +49,7 @@
                         "nrqlQueries": [
                             {
                                 "accountIds": [
-                                    NR_ACCOUNT_ID
+                                    NEW_RELIC_ACCOUNT_ID
                                 ],
                                 "query": "SELECT uniqueCount(service ) FROM M365ServiceOverview SINCE 15 MINUTES AGO facet status "
                             }
@@ -72,7 +72,7 @@
                         "id": "d997a1e4-423d-4d01-b450-da8a4465f60e.status-table-widget"
                     },
                     "rawConfiguration": {
-                        "accountId": NR_ACCOUNT_ID,
+                        "accountId": NEW_RELIC_ACCOUNT_ID,
                         "cellConfigs": [
                             {
                                 "bgColor": "red",
@@ -119,7 +119,7 @@
                         "nrqlQueries": [
                             {
                                 "accountIds": [
-                                    NR_ACCOUNT_ID
+                                    NEW_RELIC_ACCOUNT_ID
                                 ],
                                 "query": "SELECT max(statusVal) FROM M365ServiceOverview where status  = 'serviceDegradation' SINCE 1 hour AGO limit max TIMESERIES facet service   "
                             }
